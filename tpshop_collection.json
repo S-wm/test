@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "fd4bc840-8a6b-4f9a-9d2a-bbd53b4d099e",
+		"name": "tpshop商城",
+		"description": "Tpshop是一个开源的电商系统，通过互联网来实现商品的销售与业务流程的电子化",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "会员管理",
+			"item": [
+				{
+					"name": "添加会员",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "PHPSESSID=j6c545sd89t5smnej9blvc6ps0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nickname",
+									"value": "18300000024",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "18300000024",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "qq",
+									"value": "354954896",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/index.php/admin/User/add_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"index.php",
+								"admin",
+								"User",
+								"add_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改会员信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "Key contains invalid characters.",
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "PHPSESSID=kj240g9flb1ocjdbsfpq0ifjr5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mobile",
+									"value": "18300000025",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/index.php/Admin/user/detail/id/2667",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"index.php",
+								"Admin",
+								"user",
+								"detail",
+								"id",
+								"2668"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除会员",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "PHPSESSID=kj240g9flb1ocjdbsfpq0ifjr5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2667",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/index.php/Admin/user/ajax_delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"index.php",
+								"Admin",
+								"user",
+								"ajax_delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "对会员管理的增删改查接口进行测试",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
