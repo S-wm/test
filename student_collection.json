@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "6ddce02c-810f-494d-9760-6d64af63977c",
+		"name": "学生管理系统",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录",
+			"item": [
+				{
+					"name": "登录成功",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ccad800-6fd0-4299-a435-494f2a06750f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6acac7ae-75b5-4fd6-88bc-412c877ebe9b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sname\":\"tom\",\n    \"pwd\":\"111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/login.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"login.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "姓名错误",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bfe71f2-3cff-4de9-acea-f579892ba969",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sname\":\"t\",\n    \"pwd\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/login.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"login.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码错误",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e81454b1-b0fa-46ce-98f9-3b518e543111",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sname\":\"jack\",\n    \"pwd\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/login.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"login.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "姓名为空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0743f8d2-9f90-47ed-b297-b9ecf609ae16",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.success).to.eql(false);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sname\":\"\",\n    \"pwd\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/login.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"login.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码为空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a9bddb72-9d92-4089-b322-84b080115bf9",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sname\":\"lucy\",\n    \"pwd\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/login.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"login.action"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3ae3ebab-4be2-4389-abf2-393a5ed0b63a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "44777adf-63fb-4186-8a23-04b413de7730",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "注册",
+			"item": [
+				{
+					"name": "注册成功",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6daca909-c8eb-46ef-8296-19f7c977cbf8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sname\":\"hong\",\n\t\"pwd\":\"123\",\n\t\"sage\":\"22\",\n\t\"address\":\"河北\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/regist.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"regist.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "姓名不规范",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2371f16-8d86-459c-92bc-5413ef07c0bb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sname\":233,\n\t\"pwd\":\"123\",\n\t\"sage\":22,\n\t\"address\":\"河北\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/regist.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"regist.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码为空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51222dec-5237-4642-9951-62a5445dbf9f",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql('密码不能为空');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sname\":\"qwe\",\n\t\"pwd\":\"\",\n\t\"sage\":\"22\",\n\t\"address\":\"河北\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/regist.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"regist.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "年龄为空",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d2b46338-8146-426f-8df0-0181da9d8a02",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql('注册成功');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sname\":\"zxc\",\n\t\"pwd\":\"123\",\n\t\"sage\":\"\",\n\t\"address\":\"河北\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/regist.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"regist.action"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "地址不规范",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7102270-e374-47f8-974e-2a2c90aef792",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql('注册成功');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sname\":\"asd\",\n\t\"pwd\":\"123\",\n\t\"sage\":\"21\",\n\t\"address\":\"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:88/sms/regist.action",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"sms",
+								"regist.action"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c25c405e-f36e-4d86-b7fe-d2fc3dd94a58",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ececce4a-fcc6-4e86-a73e-9deb64d57f50",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "44616e74-3f08-44e7-97bf-3751da2d1c4b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "642463e4-4eaf-43f5-8eaa-45db8d4f163c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
